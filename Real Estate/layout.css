@@ -1,0 +1,85 @@
+html {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('condos_in_toronto.jpg');
+    background-size: cover;
+}
+
+.desc{
+    background-color:aliceblue;
+}
+.realtor {
+   width:400px;
+   height:600px;
+}
+
+
+.two-columns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 1500px;
+}
+
+.column:not(:first-child) {
+    flex-grow: 1;
+}
+.column:not(:second-child) {
+    flex-grow: 2;
+}
+
+figcaption {
+    font-size: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+  }
+  
+.card {
+    display: grid;
+    grid-template-rows: max-content 80px 1fr;
+    background-color:aliceblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 12px;
+  }
+  
+.card-img {
+    object-fit: cover;
+    width: 277px;
+    height: 300px;
+  }
+
+span {
+    font-size: 30px;
+  }
+
+.link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.link:hover {
+    background-color: #45a049; /* Darker green when hovered */
+}
+
+.form
+{
+    width: 400px;
+    height: 450px;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 10px;
+	cursor: pointer;
+    box-shadow: 1px 1px; 
+}
