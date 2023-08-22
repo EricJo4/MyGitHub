@@ -1,0 +1,46 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: June 3 2023
+I have done all the coding by myself and only copied the code that my professor provided to 
+complete my workshops and assignments.
+------------------------------------------------------------------------------------------------------------------
+
+The main subject that I learned from this workshop is how to define a class type and what elements
+compose it. The class type is composed of private and public members. Unlike Struct type, 
+class type is set private as default. Member variables and member functions are declared to 
+instantiate an object of class type. Some of the functions are created to define safe empty state of the 
+variables.
+Because the class type is private as default, public label must be inserted to access data within an object
+of class type. If it isn't, member functions cannot be accessed by calling them publicly.
+Standard library facilities are so useful to display formatted output on the console. Those were used in
+display() function of both Item and Bill files. 
+The ostreamtype such as width, and setf supports output to be displayed in a specific format. In this 
+workshop, it was used to display outputs in table-like format aligned in a specific way.
+
+What I learned from part 2 is that dynamic memory must be allocated to string return type to use it out of
+the local scope.
+
+char* Food::consumptionTime(int time) {
+		char timeInString[10];
+		switch (time) {
+			case 1:
+				strnCpy(timeInString, "Breakfast", 9);
+				break;
+			case 2:
+				strnCpy(timeInString, "Lunch", 9);
+				break;
+			case 3:
+				strnCpy(timeInString, "Dinner", 9);
+				break;
+			case 4:
+				strnCpy(timeInString, "Snack", 9);
+		}
+		timeInString[9] = '\0';
+		return timeInString;
+	}
+
+This code is for converting integer value of consumption time to string values. timeInString[10] is local variable, so
+it is destroyed when it goes out of the local scope. To fix this problem, I edited 'char timeInString[10]' to
+'char* timeInString = new char[10]' using dynamic memory allocation. This solution let the return type keeps its 
+memory even when it goes out of the scope.
