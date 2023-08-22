@@ -1,0 +1,6 @@
+﻿  w8p1.c
+C:\Users\Hyeonjun Jo\Documents\Workshop 8\w8p1.c(145,36): warning C4028: formal parameter 1 different from declaration
+C:\Users\Hyeonjun Jo\Documents\Workshop 8\w8p1.c(145,109): warning C4028: formal parameter 4 different from declaration
+C:\Users\Hyeonjun Jo\Documents\Workshop 8\w8p1.c(161,31): warning C4047: 'function': 'const int' differs in levels of indirection from 'void *'
+C:\Users\Hyeonjun Jo\Documents\Workshop 8\w8p1.c(161,27): warning C4024: 'getCatFoodInfo': different types for formal and actual parameter 1
+  Workshop 8.vcxproj -> C:\Users\Hyeonjun Jo\Documents\Workshop 8\x64\Debug\Workshop 8.exe
