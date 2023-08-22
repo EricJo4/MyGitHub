@@ -1,0 +1,22 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: June 10 2023
+I have done all the coding by myself and only copied the code that my professor provided 
+to complete my workshops and assignments.
+---------------------------------------------------------------------------------------------------------
+I have learned how to create and overload constructor in this workshop4. In part 1, there are
+three constructors(Canister(), Canister(a parameter), Canister(two parameters)).
+The one which has no parameters is for setting default values of member variables in the class. 
+Parameters in the constructors change the values of the member variables as calling the arguments.
+To prevent memory leak, destructor, ~Canister() is defined. It has delete[] m_contentName in it to
+deallocate dynamic memory.
+There are three reference of the current object to pour a content in a canister into another canister.
+Those functions are used for changing values of the current object by returning *this.
+
+In workshop2, I spent time finding how the w4_tester.cpp works. It was not hard to find how the objects
+are defined but hard to find how to read and print labels. In readLabel() function, I used cin.getline to limit
+the number of characters to 70 on console. For printLabel(), I used for loops to print recursive characters,
+which was a huge back and forth work. Other than mandatory functions, I added setFrame(const char*) and 
+setContent(const char*) to set frame and content variables to the values of the argument. The two functions 
+were helpful for creating definitions of mandatory functions tidier.
