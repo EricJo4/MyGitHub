@@ -1,0 +1,5 @@
+﻿  w2p2.c
+C:\Users\Hyeonjun Jo\Documents\Workshop 2\w2p2.c(59,67): warning C4244: 'initializing': conversion from 'const double' to 'float', possible loss of data
+C:\Users\Hyeonjun Jo\Documents\Workshop 2\w2p2.c(61,66): warning C4244: 'initializing': conversion from 'const double' to 'float', possible loss of data
+C:\Users\Hyeonjun Jo\Documents\Workshop 2\w2p2.c(63,65): warning C4244: 'initializing': conversion from 'const double' to 'float', possible loss of data
+  Workshop 2.vcxproj -> C:\Users\Hyeonjun Jo\Documents\Workshop 2\x64\Debug\Workshop 2.exe
