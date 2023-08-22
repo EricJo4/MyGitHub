@@ -1,0 +1,21 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: July 31 2023
+I have done all the coding by myself and only copied the code that 
+my professor provided to complete my workshops and assignments.
+---------------------------------------------------------------------------------------
+In workshop 9, I learned how to apply Rule of Three when Derived classes
+are created. I applied this rule by calling the base class's rule of three to that
+of the derived class, HtmlText. By understanding this significance of copy
+constructors, copy assignment operators, and destructors. Except for the destructor,
+I successfully allocated dynamic memory and delete it to prevent memory leaks.
+I practiced implementing those to improve my coding skills.
+HtmlText class inherited Text class so, it also had a virtual function named write.
+The write function overrided the version in the base class as the compiler extended
+its functionality by the 'virtual keyword. 
+Operator[] was used as operator overloading. The index operator in the Text class allowed
+me to provide read-only access to the content of the text file. It has shown how to create
+a behaviour for a specific operator.
+Overall, I learned how to apply Rule of Three to Polymorphism, Dynamic Dispatch
+for new version of functions, and index operator.
