@@ -1,0 +1,62 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+Full Name  : Eric Jo
+Student ID#: 137057188
+Email      : hjo9@myseneca.ca
+Section    : NII
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. printf(" 1|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'l' || userCoffee == 'L') && (coffee1 == 'l' || coffee1 == 'L'),
+        userServings >= 1 && userServings <= 4, (userCream == 'y' || userCream == 'Y') && (coffee1Cream == 'y' || coffee1Cream == 'Y'));
+    printf(" 2|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'r' || userCoffee == 'R') && (coffee2 == 'r' || coffee2 == 'R'),
+        userServings >= 5 && userServings <= 9, (userCream == 'y' || userCream == 'Y') && (coffee2Cream == 'y' || coffee2Cream == 'Y'));
+    printf(" 3|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'm' || userCoffee == 'M') && (coffee3 == 'm' || coffee3 == 'M'),
+        userServings >= 10, (userCream == 'y' || userCream == 'Y') && (coffee3Cream == 'y' || coffee3Cream == 'Y'));
+    printf(" 1|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'l' || userCoffee == 'L') && (coffee1 == 'l' || coffee1 == 'L'),
+        userServings >= 1 && userServings <= 4, (userCream == 'y' || userCream == 'Y') && (coffee1Cream == 'y' || coffee1Cream == 'Y'));
+    printf(" 2|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'r' || userCoffee == 'R') && (coffee2 == 'r' || coffee2 == 'R'),
+        userServings >= 5 && userServings <= 9, (userCream != 'y' || userCream != 'Y') && (coffee2Cream != 'y' || coffee2Cream != 'Y'));
+    printf(" 3|       %d         |      %d      |   %d   |\n",
+        (userCoffee == 'm' || userCoffee == 'M') && (coffee3 == 'm' || coffee3 == 'M'),
+        userServings >= 10, (userCream != 'y' || userCream != 'Y') && (coffee3Cream != 'y' || coffee3Cream != 'Y'));
+A) I used 48 relational expressions
+B) I used 34 logical expressions
+
+2. idProduct3 != idProduct1 && idProduct3 != idProduct2
+!(idProduct3 = idProduct1 || idProduct3 = idProduct2)
+
+3.
+1) const double GRAMS_IN_LBS = 453.5924;
+    char coffee1;
+    char coffee2;
+    char coffee3;
+    int coffee1Weight;
+    int coffee2Weight;
+    int coffee3Weight;
+    char coffee1Cream;
+    char coffee2Cream;
+    char coffee3Cream;
+    char userCoffee;
+    char userCream;
+    int userServings;
+
+2) const double GRAMS_IN_LBS = 453.5924;
+   char coffee1, coffee2, coffee3;
+   int coffee1Weight, coffee2Weight, coffee3Weight;
+   char coffee1Cream, coffee2Cream, coffee3Cream;
+   char userCoffee, userCream;
+   int userServings;
+
+The second way is easier to read and keep track of than the first way
+
