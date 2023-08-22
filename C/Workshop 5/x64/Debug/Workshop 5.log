@@ -1,0 +1,4 @@
+﻿  w5p2.c
+C:\Users\Hyeonjun Jo\Documents\Workshop 5\w5p2.c(38,51): warning C4145: '||': relational expression as switch expression; possible confusion with '|'
+C:\Users\Hyeonjun Jo\Documents\Workshop 5\w5p2.c(46,43): warning C4145: '||': relational expression as switch expression; possible confusion with '|'
+  Workshop 5.vcxproj -> C:\Users\Hyeonjun Jo\Documents\Workshop 5\x64\Debug\Workshop 5.exe

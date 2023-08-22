@@ -1,0 +1,45 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #7
+Full Name  : Eric Jo
+Student ID#: 137057188
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. It was hard to figure out how to display a number that matched to 10x numbers among
+"|" in Line-3 and only the number of units in Line-4. Modular(%) was the key.
+I used 'for' loop to repeat printing characters and 'if' statements to distinguish 10th and 20th
+number when I build Line-3 by using "i % 10 == 0 as a condition."
+For Line-4, I used printf("%d", i%10); to display the number of units only.
+
+2. Structure makes programmers know easily which variables are on which structures if
+the variables look similar.
+When it comes to my code, I used two variables for treasures. One is for setting treasures' location
+and the other is for treasures found by user. It was easier to build the code because structure tag
+indicates in which structure  each variable is located.
+
+3. In part 1, I didn't need to use any nesting while I used maximum 3 levels of it in part 2.
+In terms of a loop for Player input, I used an 'if' statement nested in another 'if' statement which
+is also nested in an 'else'
+And I nested it in  'do while' loop nested again in a bigger 'do while' loop.
+
+do
+{
+	do
+        	{
+		if (nextMove < 1 || nextMove > game.pathLength)
+
+	} while (nextMove < 1 || nextMove > game.pathLength);          ->2 Levels of nesting
+	
+	if (player.history[nextMove - 1] == 1)
+	else
+       	 {
+		if (player.history[nextMove - 1] == game.bombs[nextMove - 1] && player.history[nextMove - 1] != game.treasures[nextMove - 1])
+            		{
+			if (player.lives == 0)
+		}					        ->3 Levels of nesting
+}while (game.moves_limit != 0 && player.lives !=0);
