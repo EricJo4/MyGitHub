@@ -1,0 +1,22 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: July 7 2023
+I have done all the coding by myself and only copied the code that my professor 
+provided to complete my workshops and assignments.
+===========================================================
+In this workshop I had chances to practice defining and creating copy constructors and copy
+assignment. There are TextFile(const TextFile&) which is the copy constructor and TextFile&
+operator=(const TextFile&) which is the copy assignment. I got a deeper understanding about
+the differenc of those two. The former is copying the existing resources to new object while
+the latter to existing object.
+To prevent copying and assignment, we can use 'delete' at the end of functions we want to prevent.
+In this workshop, 'Line(const Line&) = delete' and 'Line& operator=(const Line&) = delete' are the
+examples of prevention.
+Interesting things are insertion and extraction operators. '<<', and '>>' operators for the TextFile class
+enables programmers to print objects and read input easily.
+ifstream and ofstream allowed me to read and from and write to text files. Through creating objects with
+those operations, the client code can view the contents of the text file and save as other filename.
+At last, I could read lines of a text file with ifstream using 'std::getline'. It is useful when handling text files.
+Overall, I learned how to handle file using ifstream, and ofstream and additional class design such as 
+copy constructors and copy assignment.

@@ -1,0 +1,29 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: May 17 2023
+I have done all the coding by myself and only copied the code that my professor provided to 
+complete my workshops and assignments.
+-----------------------------------------------------------------------------------------------------------------
+One of the challenges I ran into while I worked on W1P1 is finding which header files were 
+used in which implementation files. I had to go through all codes to know which files use
+cin and cout in iostream, or printf and scanf in cstdio library.
+Some modules included other modules to execute their functions. For example, 'ShoppingList.h'
+must include 'ShoppingRec.h' because 'ShoppingRec.h' defined 'ShoppingRec' structure used in
+functions in 'ShoppingList.cpp'.
+What I learned from W1P1 is how the modules work as an executable binary. Each header and
+implementation file is paired into units(ShoppingList unit, ShoppingRec unit, File unit, Utils unit)
+in Preprocessor and Compiler compiles units to binaries(ShoppingList binary, ShoppingRec binary,
+File binary, Utils binary, iostream binary, cstlib binary) and send them to Linker. Once Linker gets 
+the binaries, it links all binaries to create one complete executable binary.
+Since all files used namespace sdds, I learned the role of namespace clearly.Namespaces allow encapsulating
+related code within a named scope so that, naming conflicts when using multiple modules are prevented.
+
+In W1P2, I learned how to build cstring functions without including libraries. I found I can copy 
+a string, compare or concatenate two strings, and find the length of a string by using array, address
+and loop. Null terminator was a key element to define the most of functions in cstring. The biggest challenge
+was strStr function. It was hard to compose loops and variables to find first occurance of str2 in str1. What I
+did for creating the function was figuring out the length of str2. Next, I found a position of first occurance of
+str2 in str1. Once the position is found, I checked all characters of str2 are matched with str1 started from the
+first occrance position. If all characters are matched, I return str1 from the first occurance position otherwise, 
+nullptr.

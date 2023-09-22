@@ -1,0 +1,24 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: June 16 2023
+I have done all the coding by myself and only copied the code that my professor provided 
+to complete my workshops and assignments.
+---------------------------------------------------------------------------------------------------------
+In this workshop, I overloaded binary operators such as '+', '=', '+=', '-=', '<<', and '>>.
+I learned these operators perform arithmetic operations between object and argument, object,
+and object. The operators behave when operated upon using the corresponding operator.
+Unary operator, '~' in this workshop, was used to distinguish whether account is new or not. It does
+not change any values but just returns a specific bool value.
+
+When it comes to type conversion operators, bool(), int(), and double() were used. bool() was used
+for validating accounts and the others return member variables, number and balance each.
+Other than member operators, 2 helper binary operators were used outside the class to allow
+operations between objects. '+' allows two objects accessed and execute arithmetic operation, while
+'+=' does an double reference and an object. The '+=' is a helper opertor between a primitive type
+and a class.
+
+In workshop5 part2, I ran into a semantic error when executing int operator +=. It returns a wrong value
+different from the expected output. The cause of the issue was that I didn't pass an argument var as a 
+reference but value. The var was not changed outside of the local scope.
+So I changed  int operator+=(int var, Mark& mark) to int operator+=(int& var, Mark& mark).
