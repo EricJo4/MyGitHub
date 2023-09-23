@@ -1,1 +1,2 @@
 C:\Users\Hyeonjun Jo\source\repos\a1ms3\x64\Debug\a1ms3.exe
+C:\Users\Hyeonjun Jo\Desktop\My Github\MyGitHub\Academic Works\C\Clinic Appointment System\x64\Debug\a1ms3.exe
