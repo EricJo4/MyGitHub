@@ -1,0 +1,12 @@
+﻿  Box.c
+  main.c
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\main.c(51,18): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char (*)[3]'
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\main.c(51,14): warning C4024: 'atoi': different types for formal and actual parameter 1
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\main.c(55,16): warning C4047: '=': 'const char *' differs in levels of indirection from 'char (*)[3]'
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\main.c(80,49): warning C4047: 'function': 'Truck *' differs in levels of indirection from 'Truck (*)[3]'
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\main.c(80,42): warning C4024: 'FindTruckForShipment': different types for formal and actual parameter 1
+  mapping.c
+  Truck.c
+C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\Main Application\Truck.c(87,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Main Application.vcxproj -> C:\Users\Joewa\OneDrive\Desktop\MyFiles\Sum23-SFT221-NFF-4\SourceCode\MainApplication\x64\Debug\Main Application.exe
