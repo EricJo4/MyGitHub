@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "/css/main.css"/>
+    <title>Lego Collection</title> 
+</head>
+<body>
+    <div class="navbar bg-base-100">
+      <div class = "flex-1">
+        <a class = "btn btn-ghost normal-case text-xl" href = "/">Lego Collection</a>
+      </div>
+        <div class="navbar-center hidden sm:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href = "/about">About</a></li>
+            <li>
+              <details>
+                <summary>Theme</summary>
+                <ul class="p-2 bg-base-100 right-0">
+                  <li><a href = "/lego/sets?theme=Supplemental">Supplemental</a></li>
+                  <li><a href = "/lego/sets?theme=Lion Knights">Lion Knights</a></li>
+                  <li><a href = "/lego/sets?theme=Books">Books</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container mx-auto">
+
+        <div class="hero bg-base-200 rounded-lg p-6">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Welcome to Lego World</h1>
+                    <p class="py-6">Discover your new legos.</p>
+                    <a href = "/lego/sets" class="btn btn-primary">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-full" src="https://cdn.rebrickable.com/media/sets/0012-1.jpg" alt="Space Mini-Figures" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Space Mini-Figures</h2>
+              <p>Space Mini-Figures released in 1979</p>
+              <div class="card-actions justify-end">
+                <a href = "/lego/sets/0012-1" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-full" src="https://cdn.rebrickable.com/media/sets/010-2.jpg" alt="Pre-School Set" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Pre-School Set</h2>
+              <p>Pre-School Set released in 1973</p>
+              <div class="card-actions justify-end">
+                <a href = "/lego/sets/010-2" class="btn btn-primary">View</a>
+              </div>
+            </div>
+          </div>
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure>
+            <img class="w-full" src="https://cdn.rebrickable.com/media/sets/010-3.jpg" alt="Basic Building Set" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Basic Building Set</h2>
+            <p>Basic Building Set released in 1968</p>
+            <div class="card-actions justify-end">
+              <a href = "/lego/sets/010-3" class="btn btn-primary">View</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+</body>
+
+</html>
