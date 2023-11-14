@@ -1,5 +1,6 @@
-Sample Output
-*************
+#Sample Output
+
+```
 Loading Data
 Seneca Library Application
  1- Add New Publication
