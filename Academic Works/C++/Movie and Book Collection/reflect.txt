@@ -1,0 +1,39 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Oct 15 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+the difference between the implementations/utilizations of a functor and a lambda expression.
+When is appropriate to use each one?
+->Functor usage is meaningful when we need same function which has different instances. In this workshop,
+void bookAddedObserver and void movieAddedObserver were used to observe each object, Book and Movie.
+Those functions were used as arguments for void setObserver in Collection object and got the access to the
+members of the object. The functor were used for reusability.
+Lambda expression is useful when capturing some variables out of the lambda expression function.
+In the main, [usdToCadRage, gbpToCadRate](sdds::Book& book) function was assigned to exchange using 
+lambda exrpession. This variable can pass the argument of Book& to the function directly which is simple and 
+efficient.
+
+the constructor for SpellChecker generates an exception in certain conditions.
+How would you change your code to achieve the same result, but without exceptions (both on the constructor and on the client side)? 
+Compare the two solutions.
+->If I should change the code to the version without exceptions, I would use empty state of the object. If a file
+to read does not exist, the object should be in empty state meaning all attributes are empty. 
+On the client side, I would remove try catch loop and write an if statement like
+if(sp.empty()){
+	std::cout << "ERROR, the file doesn't exist.
+}
+I think throwing exception is more readable and intuitive when building the code because developers don't
+need to create new member function to determine empty state.
+
+the classes Movie and Book contain almost identical logic in loading data from the file. 
+How would you redesign the classes in order not to duplicate that logic?
+->I would apply inheritance to this workshop creating a Base class that both of Movie and Book share.
+
+
+the classes Movie and Book are instantiated from the main() function using a custom constructor, 
+but they also contain a default constructor. Is the default constructor necessary? 
+Could you remove it? Justify your answer.
+->The default constructor is necessary because there might be initialization without file when creating Movie or Book.

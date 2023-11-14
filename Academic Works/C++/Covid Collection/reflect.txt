@@ -1,0 +1,50 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Nov 12 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+-List all the STL functions that you have used in this workshop; explain your reasoning for choosing each one, 
+and not another.
+-> for_each, sort, any_of, copy_if
+When creating void CovidCollection::display(std::ostream& out) const, for_each was the most appropriate 
+query class template in the algorithm library. 
+To display the covid cases in the vector m_covidCases in a row, I iterated the each element using this algorithm.
+My code example: for_each(m_covidCases.begin(), m_covidCases.end(), [&out](const Covid& c)
+
+When creating void CovidCollection::sort(const std::string& field), std::sort was used to sort the elements in the vector.
+sort() is the only algorithm to organize the elements in a specific order.
+My code example: std::sort(m_covidCases.begin(), m_covidCases.end(), [field](const Covid& c1, const Covid& c2)
+
+When creating bool CovidCollection::inCollection(const std::string& variant, const std::string& country, unsigned int deaths) const,
+I used std::any_of algorithm to return bool value to get to know if any element within a range satisfies the condition in the lambda expression.
+My code example: std::any_of(m_covidCases.begin(), m_covidCases.end(), [variant, country, deaths](const Covid& c)
+
+When creating std::list<Covid> CovidCollection::getListForDeaths(unsigned int deaths),std::copy_if were used.
+My code example: std::list<Covid> extractedList{};
+std::copy_if(m_covidCases.begin(), m_covidCases.end(), std::back_inserter(extractedList), [deaths](const Covid& c)
+I used this algorithm to extract objects that satisfies the condition defined in the lambda expression and copy them into
+the locally-defined list, extractedList.
+
+-Present the advantages of using STL algorithms vs. implementing the functionality by yourself using loops.
+->One of advantages of using STL algorithms is that it performs common operations on range of elements in a sequence.
+Using them guarantees shorter code length and simple iteration while manual loop needs more complicated logics.
+And STL algorithms provide a high level of abstraction, making the code more readable and expressive.
+
+-The function that sorts the collection of objects receives as a parameter the field name to use; this can create 
+errors if the client specifies an invalid field (or misspells it). How would you redesign that function to prevent 
+the client from specifying an invalid string, allowing any error to be detected by the compiler?
+->By defining a enumeration, the error can be detected by compiler.
+enum class SortField {
+    COUNTRY,
+    CITY,
+    VARIANT,
+    YEAR,
+    NUMOFCASES,
+    NUMOFDEATHS,
+    DEFAULT
+};
+void CovidCollection::sort(SortField field) {
+    std::sort(m_covidCases.begin(), m_covidCases.end(), [field](const Covid& c1, const Covid& c2) {
+	............

@@ -1,0 +1,35 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Oct 1 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+-Q. Why the definitions and implementations in this case should be included in header file? Are there ways 
+to work around and include implementation in .cpp files?
+Unlike the common classes, template classes should have instantiation of arguments. The compiler doesn't
+know how to compile the template classes until it finds specific instantitions of a template class which has
+been implemented.
+
+-Q. Explain why it was necessary for you to add the members that you added into the Book class.
+I added operator< and operator> besides the constructors, and print(). Those operators were needed when
+setSmallestItem() and setLargestItem() in Collection class. Unlike instantiated types, double, and int, Book class
+has no pre-defined binary operator to know the relationship. For this reason, I added them and created the functions
+in the Collection class work for the Book class too.
+
+-Q. explain why these functions cannot be querries, even though they do not change value.
+getSmallestItem() and getLargestItem() returns the values iterated over the collection. 
+discuss if we can make this function a query or not (do an experiment and discuss your results).
+
+-Q. What is the reason for defining the class objects outside the class definition?
+Operator[]() returns elements of the collection that are allowed to be modified. That's why it should not return const
+reference.
+
+-Q.What is the reason for specializing the definition of m_smallestItem and m_largestItem objects for Book and 10.
+As I commented on the first question, template classes must have instantiations in the header file. int and double types
+that were used in this session don't need the specialization while the Book class does. Unlike those primitive types,
+specialization is essential for the class using constructors. The number 10 determines the capacity of the array, m_items.
+
+-Q. m_smallestItem and m_largestItem objects are also initialized for Book and 72. Is this initilization necessary? Why?
+Yes.Tthe main module of part2 has the new object which has 72 capacity. The instantiation of Book and 72 is essential
+to make the compiler understand the usage of the template class.

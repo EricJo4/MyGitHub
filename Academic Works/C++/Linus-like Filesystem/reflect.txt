@@ -1,0 +1,35 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Nov 5 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+-Why do you need to deallocate the dynamically allocated memory in your vector of resources?
+->When a directory is removed, any resources it holds sholud be cleaned up to avoid memory leaks. Because
+Resources in the vector are dynamically allocated objects, the memory allocated for these resources remains
+in use without deallocation.
+
+-To call specific functions for a Directory objects stored in a Resource*, what special C++ operation did you have to do and why?
+->I used dynamic_cast<Directory*> when I had to point to an specific address of a directory that was already created.
+some lines in my code: 
+Resource* found = m_current->find(dirName);
+m_current = dynamic_cast<Directory*>(found);
+
+Because find(dirName) returns Resource* type, found has the same type with the address returned. And m_current is Directory*
+type so, 'found' must be polymorphed to Directory* to match to type of m_current.
+
+dynamic_cast also were used in the find() function.
+some lines in my code: 
+if (m_contents[i]->type() == NodeType::DIR) {
+	return dynamic_cast<Directory*>(m_contents[i])->find(name, opflags);
+}
+Before calling the function recursively in the function, the type of m_contents[i] is Resource*. To call find() of Directory class in 
+m_contents[i] object, the type must be changed to Directory*.
+
+-In this workshop you had to use std::vector<sdds::Resource*> to store a collection of filesystem resources as pointers. 
+Could you have used std::vector<sdds::Resource> instead? 
+Justify your answer!
+->It is not a good way because the type in the vector must polymorph itself due to the two derived classes inherited the Resource class.
+If std::vector <sdds::Resource> is used, the polymorphism is not available so you can only use the members of Resource and would not 
+know if a resource in the vector is File type or Directory type. 

@@ -1,0 +1,118 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Oct 8 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+-the difference between the implementations of a composition and an aggregation with reference
+ to the classes used in this workshop. Note that both classes CheeseShop and CheeseParty have an
+ attribute of type const Cheese** and yet they are in different relationships with class Cheese. Discuss!
+->
+CheeseShop uses resources of Cheese object such as constructors. Also, the composer object(CheeseShop) is responsible
+for destroying its component object(Cheese). The composer object destroys the component object first before destroying
+itself. Citing the destructor of my code:
+	CheeseShop::~CheeseShop() {
+		for (size_t i = 0; i < m_count; i++) {
+			delete m_cheeses[i];
+			m_cheeses[i] = nullptr;
+		}
+		delete[] m_cheeses;
+		m_cheeses = nullptr;
+	}
+However, CheeseParty object does not manage the creation and destruction of Cheese object. While CheeseShop
+uses the resources of Cheese, it has no responsibility for creating and destroying the related object.
+	CheeseParty::~CheeseParty() {
+		delete[] m_pCheeses;
+		m_pCheeses = nullptr;
+	}
+The destructor only destroys the resource of its own object.
+Considering those differences discussed above, I found out that the relationship between Cheese and CheeseShop is composition while
+the one between Cheese and CheeseParty is aggregation.
+
+
+-the difference between the implementations of move and copy functions in a composition and an aggregation 
+with reference to the classes used in this workshop.
+->
+While the functions in composition use the resources of reference to the class Cheese, those in aggregation don't.
+For instance, I used the constructor of Cheese class for creating both of move and copy functions of CheeseShop.
+The CheeseShop creates copies of cheeses that the client provides, which means it just copies the attributes of copied
+objects using Cheese constructor. Citing some lines used for both of  copy assignment operator and move assignment
+operator,
+	m_cheeses = new const Cheese*[other.m_count];
+
+	for (size_t i = 0; i < other.m_count; i++) {
+		m_cheeses[i] = new Cheese(other.m_cheeses[i]->getName(), other.m_cheeses[i]->getWeight(), other.m_cheeses[i]->getPrice(), other.m_cheeses[i]->getDesc());
+	}
+However, CheeseParty stores the addresses of the cheeses that the client provides so, the class doesn't need to use the
+resource of Cheese. Unlike the functions in CheeseShop, I utilized them in CheeseParty copying the address of the arguments.
+	m_pCheeses = new const Cheese*[other.m_pCount];
+		for (size_t i = 0; i < other.m_pCount; i++) {
+			m_pCheeses[i] = other.m_pCheeses[i];
+		}
+
+
+-both CheeseShop and CheeseParty classes have an addCheese function, how do they differ in implementation. Why?
+->
+The addCheese function in CheeseShop class takes an argument of a reference of Cheese object and assigns a copy
+of it to the array of pointers of the current object. Citing some parts of my code in addCheese function:
+ 
+	const Cheese** newCheeses = new const Cheese*[m_count + 1];
+	for (size_t i = 0; i < m_count; i++) {
+		newCheeses[i] = new Cheese(m_cheeses[i]->getName(), m_cheeses[i]->getWeight(), m_cheeses[i]->getPrice(), m_cheeses[i]->getDesc());
+	}
+
+	m_cheeses = new const Cheese*[m_count];
+	for (size_t i = 0; i < m_count; i++) {
+		m_cheeses[i] = new Cheese(newCheeses[i]->getName(), newCheeses[i]->getWeight(), newCheeses[i]->getPrice(), newCheeses[i]->getDesc());
+	}
+
+I used a constructor in Cheese class to copy the member variables of the argument.
+
+However, the function in CheeseParty assign the reference of Cheese object to the array of pointers of the current object.
+
+	for (size_t i = 0; i < m_pCount; i++) {
+		newCheeses[i] = m_pCheeses[i];
+	}
+	newCheeses[m_pCount++] = &other;
+	delete[] m_pCheeses;
+	m_pCheeses = newCheeses;
+While I copied the values of the argument in CheeseShop, the reference of the argument were copied in CheeseParty.
+
+
+-the CheeseShop class doesn't have a removeCheese function like the CheeseParty does. How would you implement 
+one to keep in line with how CheeseShop handles its cheeses? What else would need to change in the project? Use 
+pseudocode to illustrate your idea.
+->
+I would create two additional functions to make CheeseShop handles its cheeses. One is for find an index that is matched
+with argument, and other is for removing the item at the index that I found.
+//In Cheese class
+bool operator==(const Cheese& cheese1 const Cheese& cheese2){
+	//return bool 
+}
+//In CheeseShop
+ int findIndex(const Cheese& cheese) const {
+        for (size_t i = 0; i < m_count; i++) {
+            if (*m_cheeses[i] == cheese) {
+                return i;
+            }
+        }
+        return -1; // Indicates that the cheese was not found
+    }
+
+ void removeCheese(const Cheese& cheese) {
+        int indexToRemove = findIndex(cheese);
+
+        if (indexToRemove != -1) {
+            // Remove the cheese at the found index
+            delete m_cheeses[indexToRemove];
+
+            // Shift the remaining cheeses to fill the gap
+            for (int i = indexToRemove; i < m_count - 1; i++) {
+                m_cheeses[i] = m_cheeses[i + 1];
+            }
+
+            // Update the count of cheeses
+            m_count--;
+        }
+    }
