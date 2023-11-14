@@ -1,0 +1,27 @@
+Name: Eric Jo
+Student number: 137057188
+Email: hjo9@myseneca.ca
+Completion date: Sep 16 2023
+I have done all the coding by myself and only copied the code that my professor provided to complete 
+my workshops and assignments.
+-------------------------------------------------------------------------------------------------------------------------
+In workshop 1, I manipulated main funciton to receive program arguments from the command line by
+changing Command Arguments on the property page of the project. Usually, main function is used without
+any arguments like 'int main()' but I used int main(int argc, char* argv[]) to receive the number of command
+lines and filenames saved in the same location with the project.
+
+There is a checking statement to figure out if header guards exist and follow a naming convention. If there's
+no header file included or the name of header guard is not the same as the one written on the statement,
+it generates comilation error with a message.
+
+There are two global variables named g_taxrate and g_discount. They are declared externally, so they can be
+used externally in other modules. Because they are declared externally in RideRequest.h, the main module
+is able to define them along with days.
+
+Unlike the external linkage, the counter variable in display function is internal. it is a local-to-function variable which
+has the lifetime of the program. Static keyword is difined when it was declared, it isn't gone even when out of scope.
+
+In part 2, some elements of RideRequest module was edited to accept a ride description in the form of a C-style null-
+terminated string of any length. I changed the variable of ride description from char array to char pointer to allocate it
+dynamic when read function is called. Since resource of object is copied in main function, I added copy constructor and 
+copy assignment operator. At last, destructor was added to prevent any memory leaks.
